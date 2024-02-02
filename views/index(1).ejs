@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My API Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Titan+One&display=swap"
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="/styles/main.css">
+
+</head>
+
+<body>
+    <form action="/search" method="post">
+        <input type="text" name="city" placeholder="City">
+        <input type="text" name="state" placeholder="State/country">
+        <button type="submit">Search</button>
+    </form>
+    <div style="width: 1218px; height: 323px; position: relative; border: none; margin-top: 10px; text-align: center;" class="main card">
+        
+        <div style=
+            "left: 578px;
+            top: 70px;
+            position: absolute;
+            mix-blend-mode: overlay;
+            color: white;
+            font-size: 21px;
+            font-family: Montserrat;
+            font-weight: 600;
+            word-wrap: break-word;"
+            >
+            Today
+        </div>
+
+        <div style=
+            "width: 300px;
+            height: 36px;
+            left: 450px;
+            top: 17px;
+            position: absolute;
+            mix-blend-mode: overlay;
+            color: white;
+            font-size: 34px;
+            font-family: Montserrat;
+            font-weight: 600;
+            word-wrap: break-word;"
+            >
+            <% if (typeof City !== 'undefined' && typeof State !== 'undefined') { %>
+                <%= City %>, <%= State %>
+            <% } else { %>
+                City, State
+            <% } %>
+        </div>
+        <!-- <div style="
+    position: absolute;
+    left: 531px;
+    top: 107px;
+    mix-blend-mode: exclusion;
+    color: white;
+    font-size: 21px;
+    font-family: Montserrat;
+    font-weight: 600;
+    word-wrap: break-word;"
+    >
+    High: <#% if (typeof high !== 'undefined') { %>
+        <#%= high %> °F
+    <#% } else { %>
+        n/a
+    <#% } %>
+</div> -->
+        <!-- <div style="left: 637px; top: 107px; position: absolute; mix-blend-mode: exclusion; color: white; font-size: 21px; font-family: Montserrat; font-weight: 600; word-wrap: break-word">Low:</div> -->
+      </div>
+    <div style="border: none;" class="row">
+        <div style="border: none;" class="styled-container"><img/>
+            <div class="styled-text one">
+                <% if (typeof temp !== 'undefined') { %>
+                    Temp: <%= temp %> °F
+                <% } else { %>
+                    Temp
+                <% } %>
+            </div>
+        </div>
+        <div class="styled-container"><img/>
+            <div class="styled-text two">
+                <% if (typeof feels_like !== 'undefined') { %>
+                    Feels Like: <%= feels_like %> °F
+                <% } else { %>
+                    Feels Like
+                <% } %>
+            </div>
+        </div>
+        <div class="styled-container"><img/>
+            <div class="styled-text three">
+                <% if (typeof Humid !== 'undefined') { %>
+                    Humidity: <%= Humid %> %
+                <% } else { %>
+                    Humidity
+                <% } %>
+            </div>
+        </div>
+        <div class="styled-container"><img/>
+            <div class="styled-text four">
+                <% if (typeof speed !== 'undefined') { %>
+                    Wind Speed: <%= speed %> mph
+                <% } else { %>
+                    Wind Speed
+                <% } %>
+            </div>
+        </div>
+  </div>
+  
+  
+</body>
+
+</html>
